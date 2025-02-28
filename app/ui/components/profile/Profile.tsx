@@ -6,7 +6,7 @@ import {
   DocumentIcon,
   EllipsisVerticalIcon,
   PhoneIcon,
-  UserCircleIcon,
+  UserIcon,
 } from "@heroicons/react/24/outline";
 import { useState } from "react";
 import MenuItem from "./MenuItem";
@@ -17,7 +17,7 @@ const Profile = () => {
   const menuItems = [
     {
       name: "Client Information",
-      icon: <UserCircleIcon className="w-5 h-5" />,
+      icon: <UserIcon className="w-5 h-5" />,
     },
     { name: "Documents", icon: <DocumentIcon className="w-5 h-5" /> },
     { name: "Other Details", icon: <ClipboardIcon className="w-5 h-5" /> },

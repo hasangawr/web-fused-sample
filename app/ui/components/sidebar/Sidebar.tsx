@@ -1,4 +1,14 @@
-import { DocumentTextIcon } from "@heroicons/react/24/outline";
+import { DocumentTextIcon, Squares2X2Icon } from "@heroicons/react/24/outline";
+import MenuItem from "./MenuItem";
+
+const menuItems = [
+  { name: "Dashboard", icon: <Squares2X2Icon width={24} className="mr-4" /> },
+  { name: "Accounting", icon: <Squares2X2Icon width={24} className="mr-4" /> },
+  { name: "Accounting", icon: <Squares2X2Icon width={24} className="mr-4" /> },
+  { name: "Accounting", icon: <Squares2X2Icon width={24} className="mr-4" /> },
+  { name: "Accounting", icon: <Squares2X2Icon width={24} className="mr-4" /> },
+  { name: "Accounting", icon: <Squares2X2Icon width={24} className="mr-4" /> },
+];
 
 const Sidebar = () => {
   return (
@@ -9,54 +19,9 @@ const Sidebar = () => {
       </div>
       <hr />
       <ul className="mt-7.5 text-sm">
-        <li>
-          <a href="#" className="block p-3 rounded hover:bg-gray-700">
-            <div className="flex items-center">
-              <DocumentTextIcon width={24} className="mr-4" />
-              Dashboard
-            </div>
-          </a>
-        </li>
-        <li>
-          <a href="#" className="block p-3 rounded hover:bg-gray-700">
-            <div className="flex items-center">
-              <DocumentTextIcon width={24} className="mr-4" />
-              Accounting
-            </div>
-          </a>
-        </li>
-        <li>
-          <a href="#" className="block p-3 rounded hover:bg-gray-700">
-            <div className="flex items-center">
-              <DocumentTextIcon width={24} className="mr-4" />
-              Accounting
-            </div>
-          </a>
-        </li>
-        <li>
-          <a href="#" className="block p-3 rounded hover:bg-gray-700">
-            <div className="flex items-center">
-              <DocumentTextIcon width={24} className="mr-4" />
-              Accounting
-            </div>
-          </a>
-        </li>
-        <li>
-          <a href="#" className="block p-3 rounded hover:bg-gray-700">
-            <div className="flex items-center">
-              <DocumentTextIcon width={24} className="mr-4" />
-              Accounting
-            </div>
-          </a>
-        </li>
-        <li>
-          <a href="#" className="block p-3 rounded hover:bg-gray-700">
-            <div className="flex items-center">
-              <DocumentTextIcon width={24} className="mr-4" />
-              Accounting
-            </div>
-          </a>
-        </li>
+        {menuItems.map((item, index) => (
+          <MenuItem key={index} name={item.name} icon={item.icon} />
+        ))}
       </ul>
     </aside>
   );

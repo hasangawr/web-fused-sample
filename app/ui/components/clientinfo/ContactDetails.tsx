@@ -5,7 +5,6 @@ import {
   PlusIcon,
 } from "@heroicons/react/24/outline";
 import DetailCard from "./DetailCard";
-import Image from "next/image";
 
 const ContactDetails = () => {
   return (
