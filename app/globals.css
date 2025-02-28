@@ -6,4 +6,71 @@ body {
   margin: 0;
   padding: 0;
   height: 100%;
+  box-sizing: border-box;
+}
+
+.ribbon {
+  position: absolute;
+  width: 55px;
+  height: 24px;
+  background: #0e9384;
+  top: -10px;
+  left: -6px;
+  border-radius: 30px;
+  border-bottom-left-radius: 0;
+}
+
+.ribbon::before {
+  position: absolute;
+  content: "";
+  width: 5px;
+  height: 10px;
+  background: #125d56;
+  top: 24px;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  z-index: 2;
+}
+
+.ribbon::after {
+  position: absolute;
+  content: "";
+  width: 5px;
+  height: 5px;
+  background: #0e9384;
+  top: 24px;
+  z-index: 1;
+}
+
+.ribbon span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-size: 11px;
+}
+
+.active {
+  background: #0e9384;
+}
+
+.active::before {
+  background: #125d56;
+}
+
+.active::after {
+  background: #0e9384;
+}
+
+.inactive {
+  background: #8e8c99;
+}
+
+.inactive::before {
+  background: #84828e;
+}
+
+.inactive::after {
+  background: #8e8c99;
 }

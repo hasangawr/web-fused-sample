@@ -17,14 +17,8 @@ const DetailCard: React.FC<DetailCardProps> = ({
 }) => {
   return (
     <div className="border border-[#eaecf0] rounded-lg p-4 flex flex-col gap-2 relative max-w-[352]">
-      <span
-        className={`px-3 py-1 text-xs font-medium rounded-full absolute top-2 left-2 ${
-          status === "Active"
-            ? "bg-green-100 text-green-600"
-            : "bg-gray-200 text-gray-600"
-        }`}
-      >
-        {status}
+      <span className={`ribbon ${status === "Active" ? "active" : "inactive"}`}>
+        <span>{status}</span>
       </span>
       <div className="flex items-center gap-2 mt-5">
         {icon}
