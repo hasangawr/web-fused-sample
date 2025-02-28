@@ -4,12 +4,17 @@ interface MenuItemProps {
   item: { name: string; icon: React.ReactNode };
   active: string;
   setActive: React.Dispatch<SetStateAction<string>>;
+  collapsed: boolean;
 }
 
-const MenuItem: React.FC<MenuItemProps> = ({ item, active, setActive }) => {
+const MenuItem: React.FC<MenuItemProps> = ({
+  item,
+  active,
+  setActive,
+  collapsed,
+}) => {
   return (
     <div
-      key={item.name}
       className={`flex items-center space-x-2 cursor-pointer p-2 rounded-lg text-sm ${
         active === item.name
           ? "bg-blue-100 text-blue-600"
@@ -17,8 +22,12 @@ const MenuItem: React.FC<MenuItemProps> = ({ item, active, setActive }) => {
       }`}
       onClick={() => setActive(item.name)}
     >
-      {item.icon}
-      <span className={`flex-1 ${active === item.name ? "font-semibold" : ""}`}>
+      <div>{item.icon}</div>
+      <span
+        className={`flex-1 ${collapsed ? "hidden" : "block"} ${
+          active === item.name ? "font-semibold" : ""
+        }`}
+      >
         {item.name}
       </span>
       {active === item.name && (
